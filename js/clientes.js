@@ -1,7 +1,4 @@
 const salvar = document.querySelector("#btnsalvar");
-const atualiza = document.querySelector("#btnatualiza");
-const nome = document.querySelector("#nome").value;
-
 
 async function adicionar() {
     const form = document.querySelector("#frmcliente");
@@ -17,11 +14,6 @@ async function adicionar() {
     console.log(data);
 }
 salvar.addEventListener('click', function () {
-
-        adicionar();
-       
-  
+    adicionar();
 });
-
-atualiza.addEventListener('click', lista_cliente());
 

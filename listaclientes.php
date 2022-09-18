@@ -48,27 +48,40 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="row">
+                        <!-- AQUI TEMOS UMA LINHA -->
+                        <div class="row">                            
+                            <!-- AQUI TEMOS UMA COLUNA OCUPANDO 100% DO TAMANHO DA LINHA -->
                             <div class="col-12">
-                                <div class="alert alert-warning" role="alert">
-                                    Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o cadastro!
-                                </div>
-                                <div id="alertmsg">
-
-                                </div>
+                                <!-- AQUI TEMOS O COMPONENTE ALERT -->
+                                <div id="alerta" class="alert alert-warning" role="alert">
+                                    <!-- AQUI TEMOS O TITULO DO ALERT DO BOOTSTRAP -->
+                                    <div id="titulo" class="mb-0">
+                                        <h6 class="alert-heading">Atenção!</h6>
+                                        Todos os campos com <span class="text-danger"> * </span> são obrigatórios para o
+                                        cadastro!
+                                    </div>
+                                    <!-- AQUI TEMOS SPINNER PARA MENSAGEM DE SALVANDO -->
+                                    <div id="carregando" class="mb-0 d-none">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <span>Salvando...</span>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
 
                                 <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome <span class="text-danger"> * </span> </label>
+                                    <label for="nome" class="form-label">Nome <span class="text-danger"> * </span>
+                                    </label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome!" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="sobrenome" class="form-label">Sobrenome <span class="text-danger"> * </span> </label>
-                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome!" required>
+                                    <label for="sobrenome" class="form-label">Sobre nome <span class="text-danger"> *
+                                        </span> </label>
+                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite seu sobre nome!" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="cpf" class="form-label">Cpf</label>
@@ -80,10 +93,10 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                            Fechar
+                            <i class="fa-solid fa-xmark"> </i> Fechar
                         </button>
-                        <button id="btnsalvar" type="button" class="btn btn-success" onclick="salva()">
-                        Salvar
+                        <button id="btnsalvar" type="button" class="btn btn-success">
+                            <i class="fa-solid fa-floppy-disk"></i> Salvar
                         </button>
                     </div>
                 </form>
@@ -98,12 +111,9 @@
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#cadastrocliente">
                             <i class="fa-solid fa-plus"> </i> Cadastrar
                         </button>
-                        <button id="btnatualiza" type="button" class="btn btn-primary" ">
+                        <button id="btnatualiza" type="button" class="btn btn-primary">
                             <i class="fa-solid fa-rotate-right"> </i> Atualizar
                         </button>
-                    </div>
-                    <div id="alertsucesso">
-
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -121,7 +131,7 @@
                                 <tr>
                                     <td>Código</td>
                                     <td>Nome</td>
-                                    <td>Sobrenome</td>
+                                    <td>Sobre nome</td>
                                     <td>Cpf</td>
                                     <td>Ação</td>
                                 </tr>
@@ -135,7 +145,21 @@
             </div>
         </div>
     </div>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA JQUERY -->
+    <script src="js/jquery.min.js"></script>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA BOOTSTRAP -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- TEMOS OS RECURSSOS DA BIBLIOTECA DE MASCARAS -->
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/inputmask.extensions.min.js"></script>
+    <script src="js/inputmask.numeric.extensions.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/messages_pt_BR.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/methods_pt.min.js"></script>
+
     <script src="js/request.js"></script>
     <script src="js/cliente.js"></script>
 </body>

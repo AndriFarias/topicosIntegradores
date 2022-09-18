@@ -1,4 +1,4 @@
-/*async function lista_cliente() {
+async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http
     const opt = {
@@ -22,4 +22,3 @@
 document.addEventListener("DOMContentLoaded", function () {
     lista_cliente();
 });
-*/

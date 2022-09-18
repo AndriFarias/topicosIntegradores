@@ -2,6 +2,9 @@ const atualiza = document.querySelector("#btnatualiza");
 const salvar = document.querySelector("#btnsalvar");
 
 
+//CONFIGURAÇÕES DOS PARAMENTRO DE VALIDAÇÃO DO FORMULÁRIO
+
+
 async function lista_cliente() {
     //monstamos a configuração da requição
     //ao servidor http
@@ -32,33 +35,8 @@ async function inserir() {
     }
     const response = await send('cadastro.php', opt);
     const dados = await response.text();
-    /*const respostaJson = await response.json();
-    const alert = getElementById("alert");
-    if (respostaJson['resposta'] == "erro") {
-        alert.innerHTML = respostaJson['msg'];
-    } else {
-        alert.innerHTML = respostaJson['msg'];
-    }
-  */
-}
-
-async function obterMsg (){
-    const opt = {
-        method: "GET",
-        mode: 'cors',
-        cache: 'default',
-        Headers : JSON
-        
-    }
-    const response = await send('cadastro.php/', opt);
-    const respostaJson = await response.json();
-    const alert = getElementById("alert");
-    if (respostaJson['resposta'] == "erro") {
-        alert.innerHTML = respostaJson['msg'];
-    } else {
-        alert.innerHTML = respostaJson['msg'];
-    }
-};
+    //VARIFICAMOS SE A RESPOSTA DO PHP OU SERVER É TRUE
+   
 //MAPEAMOS O EVENTO DE CARREGAMENTO DO DOCUMENTO
 document.addEventListener("DOMContentLoaded", function () {
     lista_cliente();
@@ -66,37 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 atualiza.addEventListener('click', lista_cliente());
 
-/*salvar.addEventListener('click', function () {
-    obterMsg ()
-   
-    //const respostaJson = await dados.json();
-    const alert = getElementById("alert");
-    if (respostaJson['resposta'] == "erro") {
-        alert.innerHTML = respostaJson['msg'];
-    } else {
-        alert.innerHTML = respostaJson['msg'];
-    }
-        
-        
-}); */
+salvar.addEventListener('click', function () {
+    //RECEBEMOS O RESULTADO DA VALIDAÇÃO DO FORMULARIO
+   inserir();
+});
 
-atualiza.addEventListener('click', lista_cliente());
-function salva() {
-    const nome = document.querySelector("#nome").Value;
-    const sobrenome = document.querySelector("#sobrenome").Value;
-    const cpf = document.querySelector("#cpf").Value;
-    const alert = document.querySelector("#alertmsg");
-    const alertsucesso = document.querySelector("#alertsucesso");
-    if ((nome == undefined) || (sobrenome == undefined) || (cpf == undefined)){
-        let html = '<div class="alert alert-danger" role="alert"> Erro em concluir o cadastro</div>'
-
-        alert.innerHTML = html;
-   } else {
-        let html = '<div class="alert alert-success" role="alert"> Cadastro realizado com sucesso</div>'
-        alert.innerHTML = html;
-   }
-       
-};
-
-
-
+}
